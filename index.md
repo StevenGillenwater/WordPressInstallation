@@ -13,7 +13,7 @@
 “sudo chmod +x /use/local/bin/docker-compose”
 
 ### Install WordPress
-*Link used: https://docs.docker.com/samples/wordpress/* \
+*Link used: https://docs.docker.com/samples/wordpress/* 
 
 6. Create an empty project directory by typing “mkdir directory_name.”
 7. Create the docker-compose.yml file with the touch command.
