@@ -24,10 +24,10 @@ echo “version: "3.9"\
 services:\
   db:\
     image: mysql:5.7\
-    volumes:\
+    volumes: \
       - db_data:/var/lib/mysql\
     restart: always\
-    environment:\
+    environment: \
       MYSQL_ROOT_PASSWORD: somewordpress\
       MYSQL_DATABASE: wordpress\
       MYSQL_USER: wordpress\
@@ -37,12 +37,12 @@ services:\
     depends_on:\
       - db\
     image: wordpress:latest\
-    volumes:\
+    volumes: \
       - wordpress_data:/var/www/html\
-    ports:\
+    ports: \
       - "8000:80"\
     restart: always\
-    environment:\
+    environment: \
       WORDPRESS_DB_HOST: db:3306\
       WORDPRESS_DB_USER: wordpress\
       WORDPRESS_DB_PASSWORD: wordpress\
