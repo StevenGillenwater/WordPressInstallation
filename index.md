@@ -56,6 +56,9 @@ volumes:\
 10. Type “http://localhost:8000” into the browser to jump to the WordPress installation.\
 11. Type “docker-compose down” to stop the container. 
 
+### Screenshot
+![Screen Shot 2021-11-18 at 9 03 49 PM](https://user-images.githubusercontent.com/60118160/142562663-9bbc8a8d-8403-4677-ae6c-278c43f28807.jpeg)
+
   
   
   
