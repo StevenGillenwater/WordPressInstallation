@@ -14,46 +14,46 @@
 
 ### Install WordPress
 *Link used: https://docs.docker.com/samples/wordpress/* \
-\
-6. Create an empty project directory by typing “mkdir directory_name.”\
-7. Create the docker-compose.yml file with the touch command.\
+
+6. Create an empty project directory by typing “mkdir directory_name.”
+7. Create the docker-compose.yml file with the touch command.
 8. Add the block file to the docker-compose file by typing: \
 \
-echo “version: "3.9"\
+`echo “version: "3.9"`\
 \
-services:\
-  db:\
-    image: mysql:5.7\
-    volumes: \
-      - db_data:/var/lib/mysql\
-    restart: always\
-    environment: \
-      MYSQL_ROOT_PASSWORD: somewordpress\
-      MYSQL_DATABASE: wordpress\
-      MYSQL_USER: wordpress\
-      MYSQL_PASSWORD: wordpress\
+`services:`\
+&nbsp;&nbsp;&nbsp; `db:`\
+&nbsp;&nbsp;&nbsp; `image: mysql:5.7`\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `volumes:` \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `- db_data:/var/lib/mysql`\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `restart: always`\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `environment: `\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `MYSQL_ROOT_PASSWORD: somewordpress`\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `MYSQL_DATABASE: wordpress`\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `MYSQL_USER: wordpress`\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `MYSQL_PASSWORD: wordpress`\
 \
-  wordpress:\
-    depends_on:\
-      - db\
-    image: wordpress:latest\
-    volumes: \
-      - wordpress_data:/var/www/html\
-    ports: \
-      - "8000:80"\
-    restart: always\
-    environment: \
-      WORDPRESS_DB_HOST: db:3306\
-      WORDPRESS_DB_USER: wordpress\
-      WORDPRESS_DB_PASSWORD: wordpress\
-      WORDPRESS_DB_NAME: wordpress\
-volumes:\
-  db_data: {}\
-  wordpress_data: {}” > docker-compose.yml\
+  `wordpress:`\
+&nbsp;&nbsp;&nbsp; `depends_on:`\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `- db`\
+&nbsp;&nbsp;&nbsp;`image: wordpress:latest`\
+&nbsp;&nbsp;&nbsp;`volumes: `\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`- wordpress_data:/var/www/html`\
+&nbsp;&nbsp;&nbsp;`ports: `\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`- "8000:80"`\
+&nbsp;&nbsp;&nbsp;`restart: always`\
+&nbsp;&nbsp;&nbsp;`environment:` \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`WORDPRESS_DB_HOST: db:3306`\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`WORDPRESS_DB_USER: wordpress`\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`WORDPRESS_DB_PASSWORD: wordpress`\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`WORDPRESS_DB_NAME: wordpress`\
+`volumes:`\
+&nbsp;&nbsp;&nbsp;`db_data: {}`\
+&nbsp;&nbsp;&nbsp;`wordpress_data: {}” > docker-compose.yml`\
   \
-  *Make sure that the version number is contained within quotation marks. \
-9. Type “sudo docker-compose up -d” *while within the directory* to run the compose file.\
-10. Type “http://localhost:8000” into the browser to jump to the WordPress installation.\
+  *Make sure that the version number is contained within quotation marks. 
+9. Type “sudo docker-compose up -d” *while within the directory* to run the compose file.
+10. Type “http://localhost:8000” into the browser to jump to the WordPress installation.
 11. Type “docker-compose down” to stop the container. 
 
 ### Screenshot
